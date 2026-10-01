@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DEOSAI FROZEN FOOD - Order fresh frozen fish, chicken, turkey and more in Mowe, Ogun State.">
+<title>DEOSAI FROZEN FOOD | Order Online</title>
+<style>
+:root{
+ --green:#087443;--green2:#0b9154;--dark:#063b27;--mint:#e9f8f0;
+ --gold:#f5b82e;--white:#fff;--ink:#10251d;--muted:#64756d;
+ --line:#e4ece8;--shadow:0 12px 35px rgba(4,54,35,.10);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:#f7faf8;color:var(--ink)}
+a{text-decoration:none;color:inherit}
+.topbar{background:var(--dark);color:#dff6ea;padding:8px 5%;font-size:13px;text-align:center}
+header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;backdrop-filter:blur(12px)}
+.nav{max-width:1200px;margin:auto;padding:15px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--dark);font-size:20px}
+.logo{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--green),var(--dark));display:grid;place-items:center;color:white;font-size:24px}
+.navlinks{display:flex;gap:24px;color:#40564d;font-weight:650;font-size:14px}
+.navlinks a:hover{color:var(--green)}
+.cartbtn{border:0;background:var(--green);color:#fff;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer;box-shadow:0 7px 18px rgba(8,116,67,.2)}
+.badge{background:var(--gold);color:#2b2105;border-radius:50%;padding:2px 7px;margin-left:5px;font-size:12px}
+.hero{background:linear-gradient(120deg,#effbf5,#fff 65%);overflow:hidden}
+.hero-inner{max-width:1200px;margin:auto;padding:70px 5%;display:grid;grid-template-columns:1.15fr .85fr;gap:45px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:#dff6e9;color:var(--green);padding:8px 13px;border-radius:30px;font-size:13px;font-weight:850}
+h1{font-size:clamp(40px,6vw,70px);line-height:.98;letter-spacing:-2px;color:var(--dark);margin:18px 0}
+.hero p{font-size:18px;line-height:1.7;color:var(--muted);max-width:650px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.primary,.secondary{padding:14px 20px;border-radius:11px;font-weight:850;display:inline-flex;align-items:center;gap:8px}
+.primary{background:var(--green);color:#fff}.secondary{background:#fff;border:1px solid var(--line);color:var(--dark)}
+.hero-visual{min-height:360px;border-radius:30px;background:linear-gradient(145deg,var(--dark),var(--green));display:grid;place-items:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.food-icons{font-size:88px;letter-spacing:12px;text-align:center;line-height:1.35}
+.floating{position:absolute;background:#fff;color:var(--dark);padding:13px 16px;border-radius:15px;font-weight:800;box-shadow:0 12px 30px #0002}
+.f1{top:25px;left:25px}.f2{bottom:25px;right:25px}
+.features{max-width:1200px;margin:-25px auto 0;padding:0 5%;position:relative}
+.featuregrid{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.feature{padding:20px;display:flex;gap:13px;align-items:center}.feature+.feature{border-left:1px solid var(--line)}
+.feature-icon{font-size:27px}.feature b{display:block}.feature span{color:var(--muted);font-size:13px}
+section{max-width:1200px;margin:auto;padding:70px 5%}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}
+.section-head h2{font-size:32px;margin:0;color:var(--dark)}.section-head p{margin:7px 0 0;color:var(--muted)}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:25px}
+.filter{border:1px solid var(--line);background:#fff;color:#486056;padding:9px 14px;border-radius:30px;font-weight:750;cursor:pointer}
+.filter.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s;box-shadow:0 5px 20px rgba(0,0,0,.035)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card-top{height:145px;background:linear-gradient(135deg,#eefaf4,#f8fcfa);display:grid;place-items:center;font-size:65px;position:relative}
+.tag{position:absolute;top:12px;left:12px;background:var(--gold);font-size:11px;font-weight:900;padding:6px 9px;border-radius:20px}
+.card-body{padding:16px}.card h3{font-size:16px;margin:0 0 7px}.price{color:var(--green);font-size:18px;font-weight:900}.unit{font-size:12px;color:var(--muted);font-weight:500}
+.add{width:100%;margin-top:13px;padding:11px;border:0;border-radius:9px;background:var(--dark);color:#fff;font-weight:850;cursor:pointer}
+.about{background:var(--dark);color:#fff;max-width:none}.about-inner{max-width:1200px;margin:auto;padding:65px 5%;display:grid;grid-template-columns:1fr 1fr;gap:45px}
+.about h2{font-size:36px;margin-top:0}.about p{color:#c9ded4;line-height:1.8}.contactbox{background:#fff;color:var(--ink);border-radius:20px;padding:25px}.contactrow{padding:13px 0;border-bottom:1px solid var(--line)}.contactrow:last-child{border:0}
+footer{background:#03281b;color:#b8d5c8;padding:25px 5%;text-align:center;font-size:13px}
+.overlay{display:none;position:fixed;inset:0;background:#0008;z-index:50;padding:15px;overflow:auto}
+.modal{background:#fff;max-width:650px;margin:35px auto;border-radius:20px;padding:25px;box-shadow:0 25px 70px #0004}
+.modal-head{display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0;color:var(--dark)}
+.close{border:0;background:#f1f5f3;border-radius:50%;width:38px;height:38px;font-size:24px;cursor:pointer}
+.cart-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+.qty button{border:1px solid #ccd8d2;background:#fff;border-radius:6px;padding:4px 9px;cursor:pointer}
+.totalbox{background:var(--mint);border-radius:12px;padding:16px;margin:18px 0;display:flex;justify-content:space-between;font-size:20px;font-weight:900;color:var(--dark)}
+label{font-size:13px;font-weight:800;color:#40564d}input,textarea{width:100%;padding:13px;border:1px solid #ccd8d2;border-radius:9px;margin:7px 0 13px;font:inherit}textarea{min-height:90px}
+.whatsapp{width:100%;border:0;border-radius:10px;background:#16a34a;color:white;padding:14px;font-weight:900;font-size:15px;cursor:pointer}
+.empty{text-align:center;padding:25px;color:var(--muted)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}.hero-inner,.about-inner{grid-template-columns:1fr}.hero-visual{min-height:270px}.navlinks{display:none}}
+@media(max-width:650px){.grid{grid-template-columns:repeat(2,1fr)}.featuregrid{grid-template-columns:1fr}.feature+.feature{border-left:0;border-top:1px solid var(--line)}section{padding:50px 5%}.card-top{height:125px}.food-icons{font-size:62px}.hero-inner{padding-top:50px}.hero p{font-size:16px}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}.brand span{font-size:17px}}
+</style>
+</head>
+<body>
+<div class="topbar">📍 Omiru Estates, Off Ofade Road, Mowe, Ogun State &nbsp; • &nbsp; 📞 08144941599 / 08166888918</div>
+<header><div class="nav">
+<a class="brand" href="#"><div class="logo">🐟</div><span>DEOSAI FROZEN FOOD</span></a>
+<div class="navlinks"><a href="#products">Products</a><a href="#about">About Us</a><a href="#contact">Contact</a></div>
+<button class="cartbtn" onclick="openCart()">🛒 Cart <span class="badge" id="count">0</span></button>
+</div></header>
+
+<div class="hero"><div class="hero-inner">
+<div><span class="kicker">❄️ QUALITY FROZEN FOODS</span>
+<h1>Good food starts with good ingredients.</h1>
+<p>Shop quality frozen fish, chicken, turkey and more from DEOSAI FROZEN FOOD. Order online and send your complete order straight to WhatsApp.</p>
+<div class="hero-actions"><a class="primary" href="#products">🛒 Shop Products</a><a class="secondary" href="https://wa.me/2348144941599">💬 WhatsApp Us</a></div></div>
+<div class="hero-visual"><div class="floating f1">Fresh & Quality</div><div class="food-icons">🐟<br>🐔 🦃</div><div class="floating f2">📍 Mowe, Ogun</div></div>
+</div></div>
+
+<div class="features"><div class="featuregrid">
+<div class="feature"><div class="feature-icon">🚚</div><div><b>Convenient Ordering</b><span>Order from your phone</span></div></div>
+<div class="feature"><div class="feature-icon">❄️</div><div><b>Quality Frozen Foods</b><span>Fish, chicken, turkey & more</span></div></div>
+<div class="feature"><div class="feature-icon">💬</div><div><b>WhatsApp Support</b><span>08144941599 / 08166888918</span></div></div>
+</div></div>
+
+<section id="products"><div class="section-head"><div><h2>Shop Our Products</h2><p>Choose your favourites and add them to your cart.</p></div></div>
+<div class="filters" id="filters">
+<button class="filter active" onclick="filterProducts('All',this)">All</button><button class="filter" onclick="filterProducts('Fish',this)">🐟 Fish</button><button class="filter" onclick="filterProducts('Chicken',this)">🐔 Chicken</button><button class="filter" onclick="filterProducts('Turkey',this)">🦃 Turkey</button>
+</div><div class="grid" id="grid"></div></section>
+
+<div class="about" id="about"><div class="about-inner"><div><h2>DEOSAI FROZEN FOOD</h2><p>We make it easy for families and food businesses around Mowe to order frozen food conveniently. Browse our selection, add what you need to your cart and send your order to us on WhatsApp.</p><p><b>Quality • Convenience • Great Service</b></p></div>
+<div class="contactbox" id="contact"><h3>📞 Contact & Location</h3><div class="contactrow">📍 Omiru Estates, Off Ofade Road, Mowe, Ogun State</div><div class="contactrow">📱 <a href="tel:08144941599">08144941599</a></div><div class="contactrow">📱 <a href="tel:08166888918">08166888918</a></div><div style="margin-top:18px"><a class="primary" href="https://wa.me/2348144941599">💬 Chat on WhatsApp</a></div></div></div></div>
+<footer>© 2026 DEOSAI FROZEN FOOD. All rights reserved.</footer>
+
+<div class="overlay" id="overlay"><div class="modal">
+<div class="modal-head"><h2>🛒 Your Cart</h2><button class="close" onclick="closeCart()">×</button></div>
+<div id="cartItems"></div><div class="totalbox"><span>Total</span><span>₦<span id="total">0</span></span></div>
+<h3>Delivery Details</h3><label>Your Name</label><input id="name" placeholder="Enter your name"><label>Phone Number</label><input id="phone" placeholder="Enter your phone number"><label>Delivery Address</label><textarea id="address" placeholder="Enter your delivery address"></textarea>
+<button class="whatsapp" onclick="sendOrder()">💬 SEND ORDER ON WHATSAPP</button>
+</div></div>
+
+<script>
+const products=[
+["Kote Fish",5000,"Fish","🐟","per kg"],["Shawa Fish",3200,"Fish","🐟","per kg"],["Owere Fish",4000,"Fish","🐟",""],["Panla Hake",4500,"Fish","🐟",""],["Croaker",5500,"Fish","🐟",""],["Mullet Fish",4500,"Fish","🐟",""],["White Kote Fish",4500,"Fish","🐟",""],["Titus Fish (Campala)",7500,"Fish","🐟",""],["Gizzard",6000,"Chicken","🍗",""],["Orobo Chicken",6000,"Chicken","🐔",""],["Soft Chicken",5200,"Chicken","🐔",""],["Chicken Neck",3200,"Chicken","🍗",""],["Chicken Wings",7500,"Chicken","🍗",""],["Drum Stick",6500,"Chicken","🍗","per kg"],["Turkey",9000,"Turkey","🦃","per kg"],["Turkey Finger",7000,"Turkey","🦃","per kg"]
+];
+let cart={};let current="All";
+function money(n){return n.toLocaleString("en-NG")}
+function render(filter=current){current=filter;const grid=document.getElementById("grid");grid.innerHTML="";
+products.filter(p=>filter==="All"||p[2]===filter).forEach((p,i)=>{
+const tag=p[2]==="Turkey"?"Turkey":p[2]==="Fish"?"Fresh Pick":"Popular";
+grid.innerHTML+=`<article class="card"><div class="card-top"><span class="tag">${tag}</span><span>${p[3]}</span></div><div class="card-body"><h3>${p[0]}</h3><div class="price">₦${money(p[1])} <span class="unit">${p[4]}</span></div><button class="add" onclick="add(${i})">+ Add to Cart</button></div></article>`;
+})}
+function filterProducts(f,el){document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));el.classList.add("active");render(f)}
+function add(i){cart[i]=(cart[i]||0)+1;updateCount();openCart()}
+function updateCount(){document.getElementById("count").textContent=Object.values(cart).reduce((a,b)=>a+b,0)}
+function openCart(){document.getElementById("overlay").style.display="block";renderCart()}
+function closeCart(){document.getElementById("overlay").style.display="none"}
+function renderCart(){let total=0;let s="";
+Object.keys(cart).forEach(i=>{let p=products[i],q=cart[i],sub=p[1]*q;total+=sub;s+=`<div class="cart-row"><div><b>${p[0]}</b><br><span style="color:#64756d">₦${money(p[1])} ${p[4]}</span></div><div class="qty"><button onclick="change(${i},-1)">−</button> ${q} <button onclick="change(${i},1)">+</button></div><b>₦${money(sub)}</b></div>`});
+document.getElementById("cartItems").innerHTML=s||'<div class="empty">Your cart is empty.<br><br><a class="primary" href="#products" onclick="closeCart()">Browse Products</a></div>';
+document.getElementById("total").textContent=money(total)}
+function change(i,n){cart[i]=(cart[i]||0)+n;if(cart[i]<=0)delete cart[i];updateCount();renderCart()}
+function sendOrder(){
+if(!Object.keys(cart).length)return alert("Please add at least one product.");
+const name=document.getElementById("name").value.trim(),phone=document.getElementById("phone").value.trim(),address=document.getElementById("address").value.trim();
+if(!name||!phone||!address)return alert("Please fill in your name, phone number and delivery address.");
+let total=0,lines=["Hello DEOSAI FROZEN FOOD 👋","I would like to place an order:",""];
+Object.keys(cart).forEach(i=>{let p=products[i],q=cart[i],sub=p[1]*q;total+=sub;lines.push(`• ${p[0]} x ${q} = ₦${money(sub)}`)});
+lines.push("",`TOTAL: ₦${money(total)}`,"",`Name: ${name}`,`Phone: ${phone}`,`Delivery Address: ${address}`);
+window.open("https://wa.me/2348144941599?text="+encodeURIComponent(lines.join("\n")),"_blank");
+}
+render();
+</script>
+</body>
+</html>
